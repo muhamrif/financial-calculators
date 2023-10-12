@@ -28,7 +28,7 @@ public class financialCalc {
         int principal =  input.nextInt() ;
         input.nextLine();
 
-        System.out.println("Please enter the Annual Interest Rate: ");
+        System.out.println("Please enter the Annual Interest Rate (%): ");
         float annualInterest =  input.nextFloat();
         input.nextLine();
 
