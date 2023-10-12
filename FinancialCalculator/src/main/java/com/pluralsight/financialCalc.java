@@ -9,13 +9,23 @@ public class financialCalc {
 
         System.out.println("Welcome to Muhamrif BANK!");
         input.nextLine();
+        System.out.println("Hope you are having an awesome day!");
+        System.out.println("How can I help you today?");
+        System.out.println("You can ask for:");
+        System.out.println("Press 'M' for Mortgage Payment Calculator");
+        System.out.println("Press 'F' for Future Value Calculator");
+        System.out.println("Press 'P' for Present Value Calculator");
+        System.out.print("Please enter which calculator you'd like to use: ");
+        String userCalc = input.nextLine();
 
-        mortgage();
+        if (userCalc.equals("M")) {
+            mortgage();
+        }
     }
     public static void mortgage (){
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter your Principal loan amount in USD: ");
-        int principal =  input.nextInt();
+        int principal =  input.nextInt() ;
         input.nextLine();
 
         System.out.println("Please enter the Annual Interest Rate: ");
@@ -38,7 +48,7 @@ public class financialCalc {
     private static void printMortgage(int principal, float annualInterest, byte years) {
         double mortgage = calculateMortgage(principal, annualInterest, years);
         double totalInterest = (mortgage * (years*12)) - principal;
-        System.out.println("Monthly Payments: " + NumberFormat.getCurrencyInstance().format(mortgage) + ", with a total interest of: " + totalInterest +" paid over " + years +" years.");
+        System.out.println("Monthly Payments: " + NumberFormat.getCurrencyInstance().format(mortgage) + ", with a total interest of: $" + totalInterest +" paid over " + years +" years.");
     }
 
 
