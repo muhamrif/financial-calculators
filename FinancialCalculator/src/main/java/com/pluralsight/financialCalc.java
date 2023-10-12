@@ -18,9 +18,11 @@ public class financialCalc {
         System.out.print("Please enter which calculator you'd like to use: ");
         String userCalc = input.nextLine();
 
-        if (userCalc.equals("M")) {
+        if (userCalc.equals("M") || userCalc.equals("m")) {
             mortgage();
         }
+        System.out.println("Thankyou for using Muhamrif BANK!");
+        System.out.println("HOPE TO SEE YOU SOON! :)");
     }
     public static void mortgage (){
         Scanner input = new Scanner(System.in);
