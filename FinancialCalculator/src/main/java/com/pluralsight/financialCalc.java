@@ -10,17 +10,14 @@ public class financialCalc {
         System.out.println("Welcome to Muhamrif BANK!");
         input.nextLine();
         System.out.println("Hope you are having an awesome day!");
+        input.nextLine();
         System.out.println("How can I help you today?");
         System.out.println("You can ask for:");
         System.out.println("Press 'M' for Mortgage Payment Calculator");
         System.out.println("Press 'F' for Future Value Calculator");
         System.out.println("Press 'P' for Present Value Calculator");
         System.out.print("Please enter which calculator you'd like to use: ");
-        String userCalc = input.nextLine();
-
-        if (userCalc.equals("M") || userCalc.equals("m")) {
-            mortgage();
-        }
+        choiceValidation();
         System.out.println("Thankyou for using Muhamrif BANK!");
         System.out.println("HOPE TO SEE YOU SOON! :)");
     }
@@ -53,5 +50,15 @@ public class financialCalc {
         System.out.println("Monthly Payments: " + NumberFormat.getCurrencyInstance().format(mortgage) + ", with a total interest of: $" + totalInterest +" paid over " + years +" years.");
     }
 
-
+    private static void choiceValidation(){
+        Scanner input = new Scanner(System.in);
+        String userCalc = input.nextLine();
+        if (userCalc.equals("M") || userCalc.equals("m")) {
+            mortgage();
+        }else{
+            System.out.println("PLEASE ENTER FROM THESE OPTIONS ONLY: 'M' OR 'F' OR 'P' ");
+            System.out.print("Please enter which calculator you'd like to use: ");
+            choiceValidation();
+        }
+    }
 }
